@@ -7,7 +7,10 @@
         <link rel="stylesheet" href="style.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
+
     <body>
+
+            
 
         <header class="header">
             <a href="#home" class="logo">Jordan <span>Brock</span></a>
@@ -21,6 +24,20 @@
                 <a href="#contact">Contact</a>
             </nav>
         </header>
+
+        <!-- Chatbot Bubble -->
+        <div class="chat-bubble" id="chatBubble" onclick="toggleChat()">
+            💬
+        </div>
+
+        <!-- Chatbot Container (Initially hidden) -->
+         <div class="chat-container" id="chatContainer">
+            <div class="chat-box" id="chatBox"></div>
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+         </div>
 
         <section class="home" id="home">
             <div class="home-content">
@@ -194,6 +211,7 @@
             </ul>
         </footer>
 
+        <script src="chatbot.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

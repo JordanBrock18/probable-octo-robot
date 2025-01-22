@@ -590,3 +590,116 @@ span{
         grid-template-columns: repeat(1,1fr);
     }
 }
+
+/* Chatbot */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Chatbot Bubble Styles */
+.chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--main-color);  /* Use the primary color from your theme */
+    color: var(--text-color);  /* Use white for text/icon */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000; /* Make sure it's on top */
+    box-shadow: 0 0 15px var(--main-color); /* Add a slight glow */
+}
+
+/* Chatbot Container */
+.chat-container {
+    position: fixed;
+    bottom: 80px; /* Position it above the bubble */
+    right: 20px;
+    width: 300px;
+    background-color: var(--second-bg-color); /* Dark background to match theme */
+    border: 1px solid var(--main-color); /* Border color to match primary color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+    z-index: 999;
+}
+
+/* Chatbox Content Area */
+.chat-box {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid var(--main-color); /* Use main color for the border */
+    background-color: var(--bg-color); /* Dark background for the chat box */
+    color: var(--text-color); /* Light text for the messages */
+}
+
+/* Message Styles */
+.user-message, .bot-message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+/* User's Messages (Right Aligned) */
+.user-message {
+    background-color: var(--bg-color); /* Dark background for the user's message */
+    text-align: right;
+    color: var(--text-color); /* Light text */
+}
+
+/* Bot's Messages (Left Aligned) */
+.bot-message {
+    background-color: var(--main-color); /* Bot's message with the main color */
+    color: var(--bg-color); /* Dark text to contrast the light background */
+    text-align: left;
+}
+
+/* Input Container (Text Box and Send Button) */
+.input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid var(--main-color); /* Divider between messages and input */
+    background-color: var(--second-bg-color);
+}
+
+.input-container input {
+    flex-grow: 1;
+    padding: 10px;
+    background: var(--bg-color); /* Input field background */
+    color: var(--text-color); /* Light text in the input field */
+    border: 1px solid var(--main-color); /* Light border for the input field */
+    border-radius: 5px;
+}
+
+.input-container button {
+    padding: 10px;
+    background-color: var(--main-color); /* Send button color */
+    color: var(--bg-color); /* Dark text */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-container button:hover {
+    background-color: #ff5733; /* Hover color for the button */
+}
+
+/* Smooth transition for the chat window */
+.chat-container {
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(20px);
+}
+
+.chat-container.show {
+    transform: translateY(0);
+}
