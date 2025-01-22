@@ -34,7 +34,7 @@
          <div class="chat-container" id="chatContainer">
             <div class="chat-box" id="chatBox"></div>
             <div class="input-container">
-                <input type="text" id="userInput" placeholder="Type your message...">
+                <input type="text" id="userInput" placeholder="Type hello to get started...">
                 <button onclick="sendMessage()">Send</button>
             </div>
          </div>
@@ -177,9 +177,12 @@
                 </div>
 
                 <div class="input-group-2">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                    <input type="submit" value="Send Message" class="btn">
+                    <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                    <input type="submit" value="Send Message" class="btn" id="sendMessageButton">
+                    <a href="mailto:jordanbrck@gmail.com" id="emailLink" class="email-button" style="display:none;">Send Message</a> <!-- Initially hidden -->
                 </div>
+                
+                
             </form>
         </section>
 

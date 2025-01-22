@@ -614,8 +614,15 @@ body {
     font-size: 24px;
     cursor: pointer;
     z-index: 1000; /* Make sure it's on top */
-    box-shadow: 0 0 15px var(--main-color); /* Add a slight glow */
+    box-shadow: 0 0 15px var(--main-color); /* Initial subtle glow */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow */
 }
+
+.chat-bubble:hover {
+    box-shadow: 0 0 25px 5px var(--main-color); /* Larger, more intense glow on hover */
+    transform: scale(1.1); /* Optional: Add a slight scaling effect on hover */
+}
+
 
 /* Chatbot Container */
 .chat-container {
@@ -643,11 +650,13 @@ body {
 
 /* Message Styles */
 .user-message, .bot-message {
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
-    border-radius: 5px;
+    border-radius: 8px;
     max-width: 80%;
     word-wrap: break-word;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 /* User's Messages (Right Aligned) */
@@ -655,6 +664,7 @@ body {
     background-color: var(--bg-color); /* Dark background for the user's message */
     text-align: right;
     color: var(--text-color); /* Light text */
+    border: 1px solid var(--text-color);
 }
 
 /* Bot's Messages (Left Aligned) */
@@ -662,14 +672,44 @@ body {
     background-color: var(--main-color); /* Bot's message with the main color */
     color: var(--bg-color); /* Dark text to contrast the light background */
     text-align: left;
+    border: 1px solid var(--bg-color);
 }
 
 /* Input Container (Text Box and Send Button) */
 .input-container {
     display: flex;
-    padding: 10px;
+    padding: 12px;
     border-top: 1px solid var(--main-color); /* Divider between messages and input */
     background-color: var(--second-bg-color);
+    font-size: 1.2rem;
+    gap: 10px;
+}
+
+/* Optional: Enhance the input text box */
+.input-container input {
+    flex-grow: 1;
+    padding: 12px; /* Larger padding for ease of typing */
+    font-size: 1.6rem; /* Consistent font size */
+    border-radius: 2rem; /* Rounded corners for a smooth look */
+    border: 2px solid var(--main-color); /* Subtle border to match the theme */
+    background-color: var(--second-bg-color);
+    color: var(--text-color); /* Light text color */
+    margin: 0;
+}
+
+/* Optional: Style for the send button */
+.input-container button {
+    padding: 1rem 2.8rem; /* Match padding of the hire button */
+    background: var(--main-color); /* Same background color as hire button */
+    box-shadow: 0 0 25px var(--main-color); /* Match shadow of hire button */
+    border-radius: 4rem; /* Rounded corners for oval shape */
+    font-size: 1.6rem; /* Font size to match */
+    color: black; /* Text color inside the button */
+    border: 2px solid transparent; /* Match border style */
+    letter-spacing: 0.1rem; /* Consistent letter spacing */
+    font-weight: 600; /* Bold text */
+    transition: 0.3s ease-in-out; /* Smooth hover effect */
+    cursor: pointer;
 }
 
 .input-container input {
@@ -678,7 +718,7 @@ body {
     background: var(--bg-color); /* Input field background */
     color: var(--text-color); /* Light text in the input field */
     border: 1px solid var(--main-color); /* Light border for the input field */
-    border-radius: 5px;
+    border-radius: 2rem;
 }
 
 .input-container button {
@@ -691,7 +731,7 @@ body {
 }
 
 .input-container button:hover {
-    background-color: #ff5733; /* Hover color for the button */
+    background-color: #b833ff; /* Hover color for the button */
 }
 
 /* Smooth transition for the chat window */

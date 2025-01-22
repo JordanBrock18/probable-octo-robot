@@ -24,3 +24,18 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
+
+document.getElementById('sendMessageButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the form from submitting (if it's part of a form)
+    
+    var message = document.getElementById('message').value; // Get the message from textarea
+    var emailLink = document.getElementById('emailLink'); // Get the email link
+    
+    // Modify the href attribute of the mailto link to include the message content
+    var mailtoURL = 'mailto:jordanbrck@gmail.com?subject=New Message&body=' + encodeURIComponent(message);
+    emailLink.setAttribute('href', mailtoURL); // Update the href
+    
+    // Trigger the click on the mailto link programmatically
+    emailLink.click();
+});
+
